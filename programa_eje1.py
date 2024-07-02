@@ -83,8 +83,17 @@ def visualiza_asistencia_70():
 
 
 def visualiza_asistencia_curso():
-    print('Has elegido la opción 3')
+    curso_ingreso = input("Ingrese el curso a  revisar ")
+    lista_alumnos = obtener_fichero_asistencia()
+    contador_alumnos = 0
+    for alumnos in lista_alumnos:
+        if alumnos['Asistencia_actual'] < 70 and curso_ingreso == alumnos['curso']:
+           contador_alumnos += 1
+    print(f"{curso_ingreso } alumnos con asistencia < 70% : {contador_alumnos} ")
+    input()
 
+def accion3():
+ print('')
 
 def salir():
     print('Saliendo')
